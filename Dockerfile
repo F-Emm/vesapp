@@ -8,7 +8,7 @@ COPY . .
 
 EXPOSE $PORT
 
-ENTRYPOINT ["python", "gunicorn --bind :$PORT app:app", "run", "--host=0.0.0.0:$PORT"]
+#ENTRYPOINT ["python", "gunicorn --bind :$PORT app:app", "run", "--host=0.0.0.0:$PORT"]
 
 #ENTRYPOINT ["python", "exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app", "run", "--host=0.0.0.0:$PORT", "app.py"]
 
@@ -16,6 +16,6 @@ ENTRYPOINT ["python", "gunicorn --bind :$PORT app:app", "run", "--host=0.0.0.0:$
 
 #CMD  /bin/sh -c exec\ gunicorn\ --bind\ :\$PORT\ --workers\ 1\ --threads\ 8\ --timeout\ 0\ app:app
 
-#CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
 
 #CMD ["flask", "exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app", "run", "--host=0.0.0.0:$PORT"]
