@@ -11,7 +11,7 @@ from IPython.display import clear_output
 import tensorflow as tf
 # import tensorflow.compat.v2.feature_column as fc
 
-from flask import Flask, request, render_template, redirect
+from flask import Flask, request, render_template, redirect, session, url_for
 import pickle
 import joblib
 
@@ -53,9 +53,15 @@ DAYS7 = joblib.load("models/dayszc.pkl")
 def home():
     return render_template('/startup2-1.0.0/iindex.html')
 
+# global target_value
+# target_value = None
+
 @app.route('/quote',methods=['GET', 'POST'])
 def quote():
-    return render_template('/startup2-1.0.0/quote.html')
+    # global target_value
+    target_value = request.args.get('target')
+    session['target_value'] = target_value
+    return render_template('/startup2-1.0.0/quote.html', target_value=target_value)
 
 @app.route('/contact',methods=['POST'])
 def contact():
@@ -887,6 +893,8 @@ def get_output():
 def get_toonage():
   return key_tonnage
 
+# def get_target():
+#   return target_value
 
 @app.route('/output',methods=['GET', 'POST'])
 def output():
@@ -909,6 +917,8 @@ def output():
   pca1 = delivery
 
   c_tp = type_nm
+
+  tar_val = session.get('target_value')
 
   print(f'del = {pca1}')
 
@@ -939,7 +949,7 @@ def output():
 
   print(f"db_cycle = {db_cycle}")
   print(f"output_cycle = {output_cycle}")
-  direct_to = f'https://ushvesapp.ushmoney.net/dashboard.php?crew_motivation={c1}&vessel_condition={v1}&consignee_throughput={co1}&weather_condition={w1}&tonnage={t1}&delivery={pca1}&output={output_cycle}&terminal=__&cargo_Type={c_tp}'
+  direct_to = f'https://ushvesapp.ushmoney.net/dashboard.php?crew_motivation={c1}&vessel_condition={v1}&consignee_throughput={co1}&weather_condition={w1}&tonnage={t1}&delivery={pca1}&output={output_cycle}&terminal=__&cargo_Type={c_tp}&target={tar_val}'
 
   return redirect(direct_to)
 
