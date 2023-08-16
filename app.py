@@ -16,6 +16,7 @@ import pickle
 import joblib
 
 app = Flask(__name__)
+app.secret_key = '2d5919fa0e9bd77aca59d39e7ef4a9e3'
 
 model = joblib.load("models/model_bi.pkl")
 
