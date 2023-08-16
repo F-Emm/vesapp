@@ -11,7 +11,7 @@ from IPython.display import clear_output
 import tensorflow as tf
 # import tensorflow.compat.v2.feature_column as fc
 
-from flask import Flask, request, render_template, redirect, session, url_for
+from flask import Flask, request, render_template, session, redirect, url_for
 import pickle
 import joblib
 
@@ -61,7 +61,7 @@ def quote():
     # global target_value
     target_value = request.args.get('target')
     session['target_value'] = target_value
-    return render_template('/startup2-1.0.0/quote.html', target_value=target_value)
+    return render_template('/startup2-1.0.0/quote.html')
 
 @app.route('/contact',methods=['POST'])
 def contact():
