@@ -115,6 +115,8 @@ def getprediction():
     deliv = int(deliv)
     if deliv == 1 :
       delivery = 'Suction'
+    max = 8000
+    min = 2000
 
     try:
       reag = request.form['Tonnage']
@@ -143,9 +145,9 @@ def getprediction():
     law = request.form['Tonnage']
   try:
     if reag < 2000:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset \n required range {min} to {max}')
     elif reag >= 8001:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset \n required range {min} to {max}')
     else:
       predict['Tonnage'] = [float(rea)]
       print(f"predict update = {predict}")
@@ -203,7 +205,8 @@ def getprediction1():
     deliv = int(deliv)
     if deliv == 1 :
       delivery = 'Bagged'
-
+    max = 10000
+    min = 1000
 
     try:
       reag = request.form['Tonnage']
@@ -236,9 +239,9 @@ def getprediction1():
     law = request.form['Tonnage']
   try:
     if reag < 1000:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset \n required range {min} to {max}')
     elif reag >= 10001:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset \n required range {min} to {max}')
     else:
       predict['Tonnage'] = [float(rea)]
       print(f"predict update = {predict}")
@@ -303,6 +306,9 @@ def getprediction2():
       delivery = 'N/A'
     # Gypsum
 
+    max = 30000
+    min = 10000
+
     try:
       reag = request.form['Tonnage']
       reag = int(reag)
@@ -342,9 +348,9 @@ def getprediction2():
     law = request.form['Tonnage']
   try:
     if reag < 10000:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset \n required range {min} to {max}')
     elif reag >= 30001:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset \n required range {min} to {max}')
     else:
       predict['Tonnage'] = [float(rea)]
       print(f"predict update = {predict}")
@@ -406,6 +412,9 @@ def getprediction3():
     else:
       delivery = 'N/A'
 
+    max = 20000
+    min = 10000
+	  
     try:
       reag = request.form['Tonnage']
       reag = int(reag)
@@ -445,9 +454,9 @@ def getprediction3():
     law = request.form['Tonnage']
   try:
     if reag < 10000:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset \n required range {min} to {max}')
     elif reag >= 30001:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset \n required range {min} to {max}')
     else:
       predict['Tonnage'] = [float(rea)]
       print(f"predict update = {predict}")
@@ -510,6 +519,9 @@ def getprediction4():
     else:
       delivery = 'N/A'
 
+    max = 30000
+    min = 10000
+	  
     try:
       reag = request.form['Tonnage']
       reag = int(reag)
@@ -549,9 +561,9 @@ def getprediction4():
     law = request.form['Tonnage']
   try:
     if reag < 10000:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset \n required range {min} to {max}')
     elif reag >= 30001:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset \n required range {min} to {max}')
     else:
       predict['Tonnage'] = [float(rea)]
       print(f"predict update = {predict}")
@@ -613,6 +625,9 @@ def getprediction5():
     else:
       delivery = 'N/A'
 
+    max = 30000
+    min = 10000
+	  
     try:
       reag = request.form['Tonnage']
       reag = int(reag)
@@ -652,9 +667,9 @@ def getprediction5():
     law = request.form['Tonnage']
   try:
     if reag < 10000:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset \n required range {min} to {max}')
     elif reag >= 30001:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset \n required range {min} to {max}')
     else:
       predict['Tonnage'] = [float(rea)]
       print(f"predict update = {predict}")
@@ -716,6 +731,9 @@ def getprediction6():
     else:
       delivery = 'N/A'
 
+    max = 30000
+    min = 10000
+
     try:
       reag = request.form['Tonnage']
       reag = int(reag)
@@ -755,9 +773,9 @@ def getprediction6():
     law = request.form['Tonnage']
   try:
     if reag < 10000:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset \n required range {min} to {max}')
     elif reag >= 30001:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset \n required range {min} to {max}')
     else:
       predict['Tonnage'] = [float(rea)]
       print(f"predict update = {predict}")
@@ -819,6 +837,9 @@ def getprediction7():
     else:
       delivery = 'N/A'
 
+    max = 30000
+    min = 10000
+	  
     try:
       reag = request.form['Tonnage']
       reag = int(reag)
@@ -858,9 +879,9 @@ def getprediction7():
     law = request.form['Tonnage']
   try:
     if reag < 10000:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is below tonnage values in dataset \n required range {min} to {max}')
     elif reag >= 30001:
-      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset')
+      return render_template('/startup2-1.0.0/output.html', output=f'Value Tonnage = "{law}" is higher than tonnage values in dataset \n required range {min} to {max}')
     else:
       predict['Tonnage'] = [float(rea)]
       print(f"predict update = {predict}")
