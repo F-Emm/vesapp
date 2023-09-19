@@ -971,7 +971,9 @@ def output():
 
   print(f"db_cycle = {db_cycle}")
   print(f"output_cycle = {output_cycle}")
-  direct_to = f'https://ushvesapp.ushmoney.net/dashboard.php?crew_motivation={c1}&vessel_condition={v1}&consignee_throughput={co1}&weather_condition={w1}&tonnage={t1}&delivery={pca1}&output={output_cycle}&terminal=__&cargo_Type={c_tp}&target={tar_val}'
+  direct_to = f'https://ushvesapp.ushengineering.com/dashboard.php?crew_motivation={c1}&vessel_condition={v1}&consignee_throughput={co1}&weather_condition={w1}&tonnage={t1}&delivery={pca1}&output={output_cycle}&terminal=__&cargo_Type={c_tp}&target={tar_val}'
+
+  # direct_to = f'https://ushvesapp.ushmoney.net/dashboard.php?crew_motivation={c1}&vessel_condition={v1}&consignee_throughput={co1}&weather_condition={w1}&tonnage={t1}&delivery={pca1}&output={output_cycle}&terminal=__&cargo_Type={c_tp}&target={tar_val}'
 
   return redirect(direct_to)
 
